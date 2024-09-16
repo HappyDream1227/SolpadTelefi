@@ -5,12 +5,16 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @layer base {
+
+@layer base {
   @font-face {
     font-family: 'Gilroy';
-    src: url('/fonts/gilroy-medium.ttf') format('ttf');
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(./fonts/gilroy-medium.ttf) format('truetype');
   }
-} */
+}
 
 @layer utilities {
   .border-gradient {
@@ -61,9 +65,11 @@ body {
     sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #141129;
+  font-family: "GilroyMedium";
+  
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+/* code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+} */

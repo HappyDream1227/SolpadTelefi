@@ -7,9 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
-      // fontFamily: {
-      //   sans : ['Gilroy', ...defaultTheme.fontFamily.sans]
-      // }
+      fontFamily: {
+        gilroy: ['Gilroy', 'sans-serif'], // Add your font here
+      },
     },
   },
   plugins: [],
