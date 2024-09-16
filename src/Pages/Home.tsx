@@ -227,25 +227,25 @@ export default function Home () {
             <div className="flex flex-col pt-14 pr-5 gap-10 items-center">
               <div id='chat-sender' className="flex gap-4 px-6">
                 <div className="flex items-end">
-                  <img className="w-[24px] h-[24px]"  src="/img/3.png" alt="12"></img>
+                  <img className="w-[24px] h-[24px] opacity-85 hover:opacity-100 duration-200 cursor-pointer"  src="/img/3.png" alt="12"></img>
                 </div>
                 <div className="flex flex-col gap-y-5">
                   <div className="max-w-[406px] h-[140px] pt-5 px-7 rounded-[22px] bg-[#261035] glex flex-col text-white text-[16.5px] ">
                     <p className="text-[#E200A6]">Alex Carry</p>
                     <p>When a chat is getting too chatty, try muting it.
-                      It lets you pause notifications on any chat you chooose
+                      It lets you pause notifications on any chat you choose
                     </p>
                   </div>
 
                   <div className="flex flex-col  gap-2">
                     <div className="flex gap-2">
-                      <img src="/img/Maskgroup1.png" alt=""></img>
-                      <img src="/img/Maskgroup2.png" alt=""></img>
+                      <img className="opacity-85 hover:opacity-100 duration-200 cursor-pointer" src="/img/Maskgroup1.png" alt=""></img>
+                      <img className="opacity-85 hover:opacity-100 duration-200 cursor-pointer" src="/img/Maskgroup2.png" alt=""></img>
                     </div>
                     <div className="flex gap-2">
-                      <img src="/img/Maskgroup3.png" alt=""></img>
-                      <img src="/img/Maskgroup4.png" alt=""></img>
-                      <img src="/img/Maskgroup5.png" alt=""></img>
+                      <img className="opacity-85 hover:opacity-100 duration-200 cursor-pointer" src="/img/Maskgroup3.png" alt=""></img>
+                      <img className="opacity-85 hover:opacity-100 duration-200 cursor-pointer" src="/img/Maskgroup4.png" alt=""></img>
+                      <img className="opacity-85 hover:opacity-100 duration-200 cursor-pointer" src="/img/Maskgroup5.png" alt=""></img>
                     </div>
                   </div>
 
