@@ -3,8 +3,9 @@ import { useContext } from "react"
 import { MainContext } from "../App"
 import IconButton from "../Components/IconButton"
 import Button from "../Components/Button"
-import Card from "../Components/Card"
-import ImageCard from "../Components/ImageCard"
+import SwapCard from "../Components/SwapCard"
+import HireCard from "../Components/HireCard"
+import RoadmapCard from "../Components/RoapmapCard"
 
 const chatData = [
   { id: 1, src:'/img/1.png', type: '', group: '', name: 'Alex Carry', content: 'Hi How are you? ❤', time: '12:20' },
@@ -26,14 +27,21 @@ const recentActivity = [
   { id: 4, src: '/img/7.png', name: 'Mike Hussy', status: 'Last seen 40 minutes ago' },
 ]
 
-const card1Data = [
+const swapCardData = [
   { id: 1, title: '1. Approve Your NFTs', content: 'To make swapping possible, we need to be able to transfer tokens on your behalf and only once per contract' },
   { id: 2, title: '2. Propose The Swap', content: 'To make swapping possible, we need to be able to transfer tokens on your behalf and only once per contract' },
   { id: 3, title: '3. Accept The Swap', content: 'To make swapping possible, we need to be able to transfer tokens on your behalf and only once per contract' },
   { id: 4, title: '4. Accep the NFT', content: 'To make swapping possible, we need to be able to transfer tokens on your behalf and only once per contract' },
 ]
 
-const card2Data = [
+const roadmapCardData = [
+  { id: 1, title: 'Q1 2022', content: 'Addition of NFT Based Decentralized Applications New PeerNft ERC-721 Ticket System Gamification System On Platform' },
+  { id: 2, title: 'Q2 2022', content: 'Batch Swap (Cross Asset Wwap)Cross Chain DApp! Renew Contract' },
+  { id: 3, title: 'Q3 2022', content: 'PeerNft TokenAddition On Other Chains, BSC, Fantom...Cross Chain Dapp!' },
+  { id: 4, title: 'Q4 2022', content: 'API And SDK Gor FevelopersNFT Governance' },
+]
+
+const hireCardData = [
   { id:1, src: '/img/hire(1).png', name: 'Clarissa Simonds', bio: 'Senior developers and designers team', nation: 'Japan' },
   { id:2, src: '/img/hire(2).png', name: 'Alisha Simonds', bio: 'Senior developers and designers team', nation: 'United Kingdom' },
   { id:3, src: '/img/hire(3).png', name: 'Peterson Benjamin', bio: "Web & C++, C# Expert with over decades' experience", nation: 'United Kingdom' },
@@ -60,7 +68,7 @@ export default function Home () {
     <div className="bg-[#141129] flex justify-center">
       <div className="max-w-[1440px] w-full m-[0_auto] flex items-center justify-between my-8">
         <div className="flex flex-col w-full">
-          <div id="main-tab" className="w-[1240px] h-[808px] flex gap-4 mx-[98px]">
+          <div id="main-tab" className="w-[1240px] h-[824px] flex gap-4 mx-[98px]">
             <div className="bg-[#1D1933] rounded-[20px] flex flex-col gap-y-2 p-5 overflow-hidden">
               <IconButton customStyle={currentIconButton === 1 ? '' : 'opacity-40'} onClick={() =>handleCurrentIconButton(1)}>
                 <svg width="27" height="23" viewBox="0 0 27 23" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -215,53 +223,65 @@ export default function Home () {
               </div>
 
               {/* divider */}
-              <div className="border-l-[1px] border-[#120F22] border-[#FFFFFF] h-[calc(100%-40px)] mt-5"></div>
+              <div className="border-l-[2px] border-[#120F22] h-[calc(100%-40px)] mt-5"></div>
 
-              <div className="flex flex-col ml-14 mt-12 gap-y-5">
-                <div className="w-[406px] h-[140px] pt-5 px-7 rounded-[22px] bg-[#261035] glex flex-col text-white text-[16.5px] ">
-                  <p className="text-[#E200A6]">Alex Carry</p>
-                  <p>When a chat is getting too chatty, try muting it.
-                    It lets you pause notifications on any chat you chooose
-                  </p>
+              <div className="flex flex-col pt-14 gap-10 items-center">
+                <div id='chat-sender' className="flex gap-4 px-6">
+                  <div className="flex items-end">
+                    <img className="w-[24px] h-[24px]"  src="/img/3.png" alt="12"></img>
+                  </div>
+                  <div className="flex flex-col gap-y-5">
+                    <div className="w-[406px] h-[140px] pt-5 px-7 rounded-[22px] bg-[#261035] glex flex-col text-white text-[16.5px] ">
+                      <p className="text-[#E200A6]">Alex Carry</p>
+                      <p>When a chat is getting too chatty, try muting it.
+                        It lets you pause notifications on any chat you chooose
+                      </p>
+                    </div>
+
+                    <div className="flex flex-col  gap-2">
+                      <div className="flex gap-2">
+                        <img src="/img/Maskgroup1.png" alt=""></img>
+                        <img src="/img/Maskgroup2.png" alt=""></img>
+                      </div>
+                      <div className="flex gap-2">
+                        <img src="/img/Maskgroup3.png" alt=""></img>
+                        <img src="/img/Maskgroup4.png" alt=""></img>
+                        <img src="/img/Maskgroup5.png" alt=""></img>
+                      </div>
+                    </div>
+
+                    
+                  </div>
+                  
                 </div>
 
-                <div className="flex flex-col  gap-2">
-                  <div className="flex gap-2">
-                    <img src="/img/Maskgroup1.png" alt=""></img>
-                    <img src="/img/Maskgroup2.png" alt=""></img>
-                  </div>
-                  <div className="flex gap-2">
-                    <img src="/img/Maskgroup3.png" alt=""></img>
-                    <img src="/img/Maskgroup4.png" alt=""></img>
-                    <img src="/img/Maskgroup5.png" alt=""></img>
-                  </div>
-                </div>
+                <div id="chat-mine" className="self-end">
+                  <div className="self-end w-[406px] py-5 px-7 rounded-[22px] bg-[#211846] glex flex-col text-white text-[16.5px] ">
+                    <div className="flex justify-between">
+                      <p className="text-[#E200A6]">Mark wood</p>
+                      <p className="flex items-center gap-2">
+                        <span>12:20</span>
+                        <svg width="19" height="11" viewBox="0 0 19 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_2_181)">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M13.174 1.22706L12.238 0.291016L8.02577 4.5032L8.96181 5.43924L13.174 1.22706ZM15.9821 0.291016L8.96181 7.37819L6.15368 4.57006L5.21764 5.5061L8.96181 9.25027L16.985 1.22706L15.9821 0.291016ZM1.40662 5.5061L5.15078 9.25027L6.08682 8.31423L2.34266 4.57006L1.40662 5.5061Z" fill="#574991"/>
+                          </g>
+                          <defs>
+                          <clipPath id="clip0_2_181">
+                          <rect width="17.3836" height="10.029" fill="white" transform="translate(0.804871 0.224121)"/>
+                          </clipPath>
+                          </defs>
+                        </svg>
 
-                <div className="self-end w-[406px] py-5 px-7 rounded-[22px] bg-[#211846] glex flex-col text-white text-[16.5px] ">
-                  <div className="flex justify-between">
-                    <p className="text-[#E200A6]">Mark wood</p>
-                    <p className="flex items-center gap-2">
-                      <span>12:20</span>
-                      <svg width="19" height="11" viewBox="0 0 19 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clip-path="url(#clip0_2_181)">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M13.174 1.22706L12.238 0.291016L8.02577 4.5032L8.96181 5.43924L13.174 1.22706ZM15.9821 0.291016L8.96181 7.37819L6.15368 4.57006L5.21764 5.5061L8.96181 9.25027L16.985 1.22706L15.9821 0.291016ZM1.40662 5.5061L5.15078 9.25027L6.08682 8.31423L2.34266 4.57006L1.40662 5.5061Z" fill="#574991"/>
-                        </g>
-                        <defs>
-                        <clipPath id="clip0_2_181">
-                        <rect width="17.3836" height="10.029" fill="white" transform="translate(0.804871 0.224121)"/>
-                        </clipPath>
-                        </defs>
-                      </svg>
-
+                      </p>
+                    </div>
+                    <p>
+                      No one else can see your messages.
                     </p>
                   </div>
-                  <p>
-                    No one else can see your messages.
-                  </p>
                 </div>
 
-                <div className="flex items-center gap-4">
-                  <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <div id="chat-input" className="flex items-center gap-4 mt-10">
+                  <svg className="cursor-pointer" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_2_198)">
                     <path d="M19.3384 10.8986L14.3292 19.5748C14.0635 20.035 13.6259 20.3708 13.1126 20.5083C12.5993 20.6459 12.0523 20.5739 11.5921 20.3082C11.1319 20.0424 10.7961 19.6048 10.6586 19.0915C10.521 18.5782 10.593 18.0313 10.8587 17.5711L16.2019 8.31656C16.6447 7.54954 17.3741 6.98986 18.2296 6.76063C19.0851 6.5314 19.9966 6.6514 20.7636 7.09424C21.5306 7.53708 22.0903 8.26647 22.3195 9.12197C22.5488 9.97747 22.4288 10.889 21.9859 11.656L15.9749 22.0674C15.355 23.1412 14.3338 23.9247 13.1361 24.2457C11.9384 24.5666 10.6623 24.3986 9.58847 23.7786C8.51465 23.1586 7.73109 22.1375 7.41017 20.9398C7.08925 19.7421 7.25725 18.466 7.87722 17.3921L13.8882 6.98078" stroke="#443E66" stroke-width="1.13168" stroke-linecap="round" stroke-linejoin="round"/>
                     </g>
@@ -273,7 +293,7 @@ export default function Home () {
                   </svg>
 
                   <div className="flex w-[391px] h-[31px] px-4 items-center gap-2 border-[1px] bg-[#171429] border-[#443d66] rounded-[30px]">
-                    <svg width="14" height="14" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg  width="14" height="14" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M6.64217 12.5172C8.03078 12.517 9.37938 12.0521 10.4732 11.1967L13.9123 14.6358L15.0185 13.5296L11.5794 10.0905C12.4353 8.9965 12.9005 7.64759 12.9008 6.25862C12.9008 2.80777 10.093 0 6.64217 0C3.19132 0 0.383545 2.80777 0.383545 6.25862C0.383545 9.70947 3.19132 12.5172 6.64217 12.5172ZM6.64217 1.56466C9.23089 1.56466 11.3361 3.6699 11.3361 6.25862C11.3361 8.84734 9.23089 10.9526 6.64217 10.9526C4.05344 10.9526 1.9482 8.84734 1.9482 6.25862C1.9482 3.6699 4.05344 1.56466 6.64217 1.56466Z" fill="#443E66"/>
                     </svg>
 
@@ -285,13 +305,13 @@ export default function Home () {
 
                   <div className="flex gap-2">
 
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="cursor-pointer" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M9.84455 19.2286C8.00767 19.2286 6.21204 18.6839 4.68474 17.6634C3.15743 16.6429 1.96704 15.1924 1.2641 13.4954C0.561153 11.7983 0.377231 9.93092 0.735588 8.12934C1.09394 6.32776 1.97849 4.6729 3.27735 3.37403C4.57622 2.07517 6.23108 1.19062 8.03266 0.832268C9.83424 0.473911 11.7016 0.657833 13.3987 1.36077C15.0957 2.06372 16.5462 3.25411 17.5667 4.78142C18.5873 6.30872 19.132 8.10435 19.132 9.94123C19.132 12.4044 18.1535 14.7667 16.4117 16.5084C14.67 18.2501 12.3077 19.2286 9.84455 19.2286ZM9.84455 1.81474C8.23728 1.81474 6.66611 2.29135 5.32971 3.1843C3.99332 4.07725 2.95173 5.34643 2.33665 6.83135C1.72158 8.31628 1.56065 9.95024 1.87421 11.5266C2.18777 13.103 2.96174 14.551 4.09825 15.6875C5.23476 16.824 6.68276 17.598 8.25915 17.9116C9.83553 18.2251 11.4695 18.0642 12.9544 17.4491C14.4393 16.834 15.7085 15.7925 16.6015 14.4561C17.4944 13.1197 17.971 11.5485 17.971 9.94123C17.971 7.78595 17.1149 5.71894 15.5908 4.19493C14.0668 2.67092 11.9998 1.81474 9.84455 1.81474Z" fill="#443E66"/>
                       <path d="M9.26407 8.19978H8.10314C8.10314 7.89189 7.98083 7.5966 7.76311 7.37888C7.5454 7.16117 7.25011 7.03886 6.94221 7.03886C6.63432 7.03886 6.33903 7.16117 6.12132 7.37888C5.9036 7.5966 5.78129 7.89189 5.78129 8.19978H4.62036C4.62036 7.58399 4.86498 6.99342 5.30042 6.55798C5.73585 6.12255 6.32642 5.87793 6.94221 5.87793C7.55801 5.87793 8.14858 6.12255 8.58401 6.55798C9.01944 6.99342 9.26407 7.58399 9.26407 8.19978Z" fill="#443E66"/>
                       <path d="M15.0687 8.19978H13.9078C13.9078 7.89189 13.7855 7.5966 13.5677 7.37888C13.35 7.16117 13.0547 7.03886 12.7468 7.03886C12.4389 7.03886 12.1437 7.16117 11.9259 7.37888C11.7082 7.5966 11.5859 7.89189 11.5859 8.19978H10.425C10.425 7.58399 10.6696 6.99342 11.105 6.55798C11.5405 6.12255 12.131 5.87793 12.7468 5.87793C13.3626 5.87793 13.9532 6.12255 14.3886 6.55798C14.8241 6.99342 15.0687 7.58399 15.0687 8.19978Z" fill="#443E66"/>
                       <path d="M9.84457 15.1652C8.61299 15.1652 7.43184 14.6759 6.56098 13.8051C5.69011 12.9342 5.20087 11.7531 5.20087 10.5215H6.36179C6.36179 11.4452 6.72873 12.331 7.38188 12.9842C8.03502 13.6373 8.92088 14.0043 9.84457 14.0043C10.7683 14.0043 11.6541 13.6373 12.3073 12.9842C12.9604 12.331 13.3274 11.4452 13.3274 10.5215H14.4883C14.4883 11.7531 13.999 12.9342 13.1282 13.8051C12.2573 14.6759 11.0762 15.1652 9.84457 15.1652Z" fill="#443E66"/>
                     </svg>
-                    <svg width="16" height="22" viewBox="0 0 16 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="cursor-pointer" width="16" height="22" viewBox="0 0 16 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M8.15622 14.6002C10.1569 14.6002 11.7785 12.9786 11.7785 10.9779V4.5383C11.7785 2.53759 10.1569 0.916016 8.15622 0.916016C6.15551 0.916016 4.53394 2.53759 4.53394 4.5383V10.9779C4.53394 12.9786 6.15551 14.6002 8.15622 14.6002ZM6.54631 4.5383C6.54631 3.65044 7.26836 2.92839 8.15622 2.92839C9.04408 2.92839 9.76612 3.65044 9.76612 4.5383V10.9779C9.76612 11.8658 9.04408 12.5878 8.15622 12.5878C7.26836 12.5878 6.54631 11.8658 6.54631 10.9779V4.5383Z" fill="#443E66"/>
                       <path d="M15.8032 10.978H13.7909C13.7909 14.0851 11.2633 16.6127 8.15619 16.6127C5.04908 16.6127 2.52153 14.0851 2.52153 10.978H0.509155C0.509155 14.8527 3.40859 18.056 7.15 18.551V19.8325H3.72896V21.8449H12.5834V19.8325H9.16238V18.551C12.9038 18.056 15.8032 14.8527 15.8032 10.978Z" fill="#443E66"/>
                     </svg>
@@ -299,6 +319,7 @@ export default function Home () {
                   </div>
 
                 </div>
+
               </div>
             </div>
 
@@ -364,14 +385,14 @@ export default function Home () {
           {/* communicate with TelFi */}
           <div className="max-w-[1440px] w-full h-[344px] m-[0_auto] flex items-center justify-center my-8 bg-[#1D19337A] mt-[64px]">
             <div className="flex flex-col items-center justify-center gap-y-8">
-              <div className="text-white text-[50px] font-semibold">
+              <div className="text-white text-[30px] sm:text-[50px] font-semibold">
                 <span>Communicate with </span>
-                <span className="text-[linear-gradient(97.58deg,#527FF7_-9.47%,#B251ED_24.58%,#F53E8E_93.49%,#FD6C5D_152.68%)]">TelFi</span>
+                <span className=" text-[linear-gradient(97.58deg,#527FF7_-9.47%,#B251ED_24.58%,#F53E8E_93.49%,#FD6C5D_152.68%)]">TelFi</span>
               </div>
 
               <div className="flex gap-4">
                 <Button>
-                  <span className="text-[16px] text-white">create new trade</span>
+                  <span className="text-[16px] text-white">Create New Trade</span>
                 </Button>
                 
                 <Button customStyle={''}>
@@ -382,45 +403,41 @@ export default function Home () {
           </div>
 
           {/* Make your first swap */}
-          <div className="w-[1240px] flex flex-col gap-[145px] mx-[98px] items-center justify-center my-[145px]">
-            <div id='card_holder' className="flex flex-col items-center justify-center ">
-              <p className="text-[54px] text-[#E200A6] font-semibold">Make Your First Swap</p>
-              <div className="flex gap-8 mt-[80px]">
-                {card1Data.map((card) => {
-                  return (
-                    <Card number={card.id} title={card.title} content={card.content}/>
-                  )
-                })}
+          <div className="max-w-[1440px] w-full m-[0_auto] py-[87px] flex items-center justify-center ">
+            <div className="w-full max-w-[1240px] flex flex-col gap-[145px] mx-[98px] items-center justify-center my-[145px]">
+              <div className="flex flex-col items-center justify-center ">
+                <p className="text-[54px] text-[#E200A6] font-semibold">Make Your First Swap</p>
+                <div className="flex gap-8 mt-[80px] flex-wrap justify-center items-center">
+                  {swapCardData.map((card) => (
+                    <SwapCard key={card.id} number={card.id} title={card.title} content={card.content} />
+                  ))}
+                </div>
+              </div>
+
+              <div className="flex flex-col items-center justify-center">
+                <p className="text-[54px] text-[#E200A6] font-semibold">Roadmap</p>
+                <div className="flex gap-8 mt-[80px] flex-wrap justify-center items-center">
+                  {roadmapCardData.map((card) => (
+                    <RoadmapCard key={card.title} title={card.title} content={card.content} />
+                  ))}
+                </div>
+              </div>
+
+              <div className="flex flex-col items-center justify-center">
+                <p className="text-[54px] text-[#E200A6] font-semibold">Hire Experts Team</p>
+                <p className="text-[19px] leading-[40px] text-white w-full max-w-[912px] text-center mt-[22px]">
+                  Hiring experts costs more per hour than hiring entry- or mid-level freelancers, but they can usually get the work done faster—and better.
+                </p>
+                <div className="flex gap-8 mt-[80px] flex-wrap justify-center items-center">
+                  {hireCardData.map((card) => (
+                    <HireCard key={card.name} src={card.src} name={card.name} bio={card.bio} nation={card.nation} />
+                  ))}
+                </div>
               </div>
             </div>
-
-            <div id='card_holder' className="flex flex-col items-center justify-center">
-              <p className="text-[54px] text-[#E200A6] font-semibold">Roadmap</p>
-              <div className="flex gap-8 mt-[80px]">
-                {card1Data.map((card) => {
-                  return (
-                    <Card number={card.id} title={card.title} content={card.content}/>
-                  )
-                })}
-              </div>
-            </div>
-
-            <div id='card_holder' className="flex flex-col items-center justify-center">
-              <p className="text-[54px] text-[#E200A6] font-semibold">Hire Experts Team</p>
-              <p className="text-[19px] leading-[40px] text-white w-[912px] text-center mt-[22px]">Hiring experts costs more per hour than hiring entry- or mid-level freelancers, but they can usually get the
-              work done faster—and better</p>
-              <div className="flex gap-8 mt-[80px]">
-                {card2Data.map((card) => {
-                  return (
-                    <ImageCard src={card.src} name={card.name} bio={card.bio} nation={card.nation}/>
-                  )
-                })}
-              </div>
-            </div>
-            
-            
-
           </div>
+   
+          
 
           {/* about us */}
           <div className="max-w-[1440px] w-full m-[0_auto] py-[87px] flex items-center justify-center bg-[#1D19337A]">
@@ -433,13 +450,7 @@ export default function Home () {
               
             </div>
           </div>
-
-
-
         </div>
-        
-
-        
      
       </div>
     </div>

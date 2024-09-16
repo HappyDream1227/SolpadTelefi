@@ -2,7 +2,7 @@
 import { ReactNode } from "react"
 import Button from "./Button"
 
-interface ImageCardProps {
+interface HireCardProps {
   customStyle?: String,
   children?: ReactNode,
   src: string,
@@ -11,7 +11,7 @@ interface ImageCardProps {
   nation: string
 }
 
-const ImageCard: React.FC<ImageCardProps> = ({ customStyle = '', children, src, name, bio, nation }) => {
+const HireCard: React.FC<HireCardProps> = ({ customStyle = '', children, src, name, bio, nation }) => {
   return (
     <div className={`flex flex-col w-[281px] items-center justify-center px-[50px] py-[42px]  
       border-[1px] border-gradient`}>
@@ -38,4 +38,4 @@ const ImageCard: React.FC<ImageCardProps> = ({ customStyle = '', children, src, 
   );
 };
 
-export default ImageCard;
+export default HireCard;
