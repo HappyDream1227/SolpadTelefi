@@ -66,8 +66,10 @@ export default function Home () {
 
 
     <div className="bg-[#141129] flex flex-col justify-center font-gilroy mb-[145px]">
-      <div className="m-[0_auto] flex items-center justify-between mt-8 mb-20">
-        <div id="chat-tab" className="max-w-[1240px] h-[800px] flex gap-4 mx-[98px] justify-center ">
+      {/* main chat interface */}
+      
+      <div id="chat-tab" className="m-[0_auto] flex items-center mt-8 mb-20">
+        <div className="lg:max-w-[1240px]  flex gap-4  justify-center ">
           <div id="chat-setting" className="bg-[#1D1933] rounded-[20px] hidden xl:flex flex-col gap-y-2 p-5 overflow-hidden">
             <IconButton customStyle={currentIconButton === 1 ? '' : 'opacity-40'} onClick={() =>handleCurrentIconButton(1)}>
               <svg width="27" height="23" viewBox="0 0 27 23" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -224,28 +226,29 @@ export default function Home () {
             {/* divider */}
             <div className="hidden lg:block border-l-[2px] border-[#120F22] h-[calc(100%-40px)] mt-5"></div>
 
-            <div className="flex flex-col pt-14 pr-5 gap-10 items-center">
-              <div id='chat-sender' className="flex gap-4 px-6">
+            <div className="flex flex-col gap-10 items-center px-4 sm:relative">
+              <div id='chat-sender' className="flex gap-4 sm:px-5 sm:w-full mt-10 mr-10 md:mr-5">
                 <div className="flex items-end">
-                  <img className="w-[24px] h-[24px] opacity-85 hover:opacity-100 duration-200 cursor-pointer"  src="/img/3.png" alt="12"></img>
+                  <img className="sm:w-[24px] sm:h-[24px] opacity-85 hover:opacity-100 duration-200 cursor-pointer"  src="/img/3.png" alt="12"></img>
                 </div>
-                <div className="flex flex-col gap-y-5">
-                  <div className="max-w-[406px] h-[140px] pt-5 px-7 rounded-[22px] bg-[#261035] glex flex-col text-white text-[16.5px] ">
+
+                <div className="w-[230px] sm:w-full flex flex-col gap-y-5">
+                  <div className="max-w-[406px] py-5 px-5 sm:px-7 rounded-[22px] bg-[#261035] flex flex-col text-white text-[16.5px] ">
                     <p className="text-[#E200A6]">Alex Carry</p>
                     <p>When a chat is getting too chatty, try muting it.
                       It lets you pause notifications on any chat you choose
                     </p>
                   </div>
 
-                  <div className="flex flex-col  gap-2">
-                    <div className="flex gap-2">
-                      <img className="opacity-85 hover:opacity-100 duration-200 cursor-pointer" src="/img/Maskgroup1.png" alt=""></img>
-                      <img className="opacity-85 hover:opacity-100 duration-200 cursor-pointer" src="/img/Maskgroup2.png" alt=""></img>
+                  <div className="w-[230px] sm:w-full flex flex-col mt-5 sm:mt-4 gap-2 ">
+                    <div className="flex flex-col sm:flex-row gap-2">
+                      <img className="opacity-85 hover:opacity-100 duration-200 cursor-pointer sm:w-[210px]" src="/img/Maskgroup1.png" alt=""></img>
+                      <img className="opacity-85 hover:opacity-100 duration-200 cursor-pointer sm:w-[210px]" src="/img/Maskgroup2.png" alt=""></img>
                     </div>
-                    <div className="flex gap-2">
-                      <img className="opacity-85 hover:opacity-100 duration-200 cursor-pointer" src="/img/Maskgroup3.png" alt=""></img>
-                      <img className="opacity-85 hover:opacity-100 duration-200 cursor-pointer" src="/img/Maskgroup4.png" alt=""></img>
-                      <img className="opacity-85 hover:opacity-100 duration-200 cursor-pointer" src="/img/Maskgroup5.png" alt=""></img>
+                    <div className="flex flex-col sm:flex-row gap-2">
+                      <img className="opacity-85 hover:opacity-100 duration-200 cursor-pointer sm:w-[136px]" src="/img/Maskgroup3.png" alt=""></img>
+                      <img className="opacity-85 hover:opacity-100 duration-200 cursor-pointer sm:w-[136px]" src="/img/Maskgroup4.png" alt=""></img>
+                      <img className="opacity-85 hover:opacity-100 duration-200 cursor-pointer sm:w-[136px]" src="/img/Maskgroup5.png" alt=""></img>
                     </div>
                   </div>
 
@@ -254,8 +257,8 @@ export default function Home () {
                 
               </div>
 
-              <div id="chat-mine" className="self-end">
-                <div className="self-end w-[406px] py-5 px-7 rounded-[22px] bg-[#211846] glex flex-col text-white text-[16.5px] ">
+              <div id="chat-mine" className="self-end ml-5 md:ml-0 pr-5">
+                <div className="self-end w-full sm:w-[406px] py-5 px-7 rounded-[22px] bg-[#211846] glex flex-col text-white text-[16.5px] ">
                   <div className="flex justify-between">
                     <p className="text-[#E200A6]">Mark wood</p>
                     <p className="flex items-center gap-2">
@@ -279,7 +282,7 @@ export default function Home () {
                 </div>
               </div>
 
-              <div id="chat-input" className="flex items-center gap-4 mt-10">
+              <div id="chat-input" className="lg:mt-56 flex justify-between items-center gap-4 mt-10">
                 <svg className="cursor-pointer" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g clipPath="url(#clip0_2_198)">
                   <path d="M19.3384 10.8986L14.3292 19.5748C14.0635 20.035 13.6259 20.3708 13.1126 20.5083C12.5993 20.6459 12.0523 20.5739 11.5921 20.3082C11.1319 20.0424 10.7961 19.6048 10.6586 19.0915C10.521 18.5782 10.593 18.0313 10.8587 17.5711L16.2019 8.31656C16.6447 7.54954 17.3741 6.98986 18.2296 6.76063C19.0851 6.5314 19.9966 6.6514 20.7636 7.09424C21.5306 7.53708 22.0903 8.26647 22.3195 9.12197C22.5488 9.97747 22.4288 10.889 21.9859 11.656L15.9749 22.0674C15.355 23.1412 14.3338 23.9247 13.1361 24.2457C11.9384 24.5666 10.6623 24.3986 9.58847 23.7786C8.51465 23.1586 7.73109 22.1375 7.41017 20.9398C7.08925 19.7421 7.25725 18.466 7.87722 17.3921L13.8882 6.98078" stroke="#443E66" strokeWidth="1.13168" strokeLinecap="round" strokeLinejoin="round"/>
@@ -291,7 +294,7 @@ export default function Home () {
                   </defs>
                 </svg>
 
-                <div className="flex w-[391px] h-[31px] px-4 items-center gap-2 border-[1px] bg-[#171429] border-[#443d66] rounded-[30px]">
+                <div className="flex w-[60%] sm:w-[391px] h-[31px] px-4 items-center gap-2 border-[1px] bg-[#171429] border-[#443d66] rounded-[30px]">
                   <svg  width="14" height="14" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M6.64217 12.5172C8.03078 12.517 9.37938 12.0521 10.4732 11.1967L13.9123 14.6358L15.0185 13.5296L11.5794 10.0905C12.4353 8.9965 12.9005 7.64759 12.9008 6.25862C12.9008 2.80777 10.093 0 6.64217 0C3.19132 0 0.383545 2.80777 0.383545 6.25862C0.383545 9.70947 3.19132 12.5172 6.64217 12.5172ZM6.64217 1.56466C9.23089 1.56466 11.3361 3.6699 11.3361 6.25862C11.3361 8.84734 9.23089 10.9526 6.64217 10.9526C4.05344 10.9526 1.9482 8.84734 1.9482 6.25862C1.9482 3.6699 4.05344 1.56466 6.64217 1.56466Z" fill="#443E66"/>
                   </svg>
@@ -381,15 +384,15 @@ export default function Home () {
       </div>
 
       {/* communicate with TelFi */}
-      <div className="bg-[#1D1933] flex justify-center w-full">
-        <div className="w-full h-[344px] m-[0_auto] flex items-center justify-center my-8 bg-[#1D19337A] mt-[64px]">
+      <div className="bg-[#1D1933] m-[0_auto] flex justify-center w-full">
+        <div className="w-full flex items-center justify-center bg-[#1D19337A] my-[64px]">
           <div className="flex flex-col items-center justify-center gap-y-8">
-            <div className="text-white text-[30px] sm:text-[50px] font-semibold">
+            <div className="text-white text-[28px] sm:text-[50px] font-semibold">
               <span>Communicate with </span>
               <span className=" text-[linear-gradient(97.58deg,#527FF7_-9.47%,#B251ED_24.58%,#F53E8E_93.49%,#FD6C5D_152.68%)]">TelFi</span>
             </div>
 
-            <div className="flex gap-4">
+            <div className="flex flex-col md:flex-row gap-4 w-full justify-center">
               <Button>
                 <span className="text-[16px] text-white">Create New Trade</span>
               </Button>
@@ -405,9 +408,9 @@ export default function Home () {
       {/* Make your first swap */}
       <div className="m-[0_auto] flex items-center justify-between mt-8">
         <div className="max-w-[1440px] w-full m-[0_auto] flex items-center justify-center ">
-          <div className="w-full max-w-[1240px] flex flex-col gap-[145px] mx-[98px] items-center justify-center my-[145px]">
+          <div className="w-full max-w-[1240px] flex flex-col gap-[145px] mx-5 lg:mx-[98px] items-center justify-center my-[145px]">
             <div className="flex flex-col items-center justify-center ">
-              <p className="text-[54px] text-[#E200A6] font-semibold">Make Your First Swap</p>
+              <p className="text-[32px] md:text-[54px] text-[#E200A6] font-semibold">Make Your First Swap</p>
               <div className="flex gap-8 mt-[80px] flex-wrap justify-center items-center">
                 {swapCardData.map((card) => (
                   <SwapCard key={card.id} number={card.id} title={card.title} content={card.content} />
@@ -416,7 +419,7 @@ export default function Home () {
             </div>
 
             <div className="flex flex-col items-center justify-center">
-              <p className="text-[54px] text-[#E200A6] font-semibold">Roadmap</p>
+              <p className="text-[38px] md:text-[54px] text-[#E200A6] font-semibold">Roadmap</p>
               <div className="flex gap-8 mt-[80px] flex-wrap justify-center items-center">
                 {roadmapCardData.map((card) => (
                   <RoadmapCard key={card.title} title={card.title} content={card.content} />
@@ -425,7 +428,7 @@ export default function Home () {
             </div>
 
             <div className="flex flex-col items-center justify-center">
-              <p className="text-[54px] text-[#E200A6] font-semibold">Hire Experts Team</p>
+              <p className="text-[38px] md:text-[54px] text-[#E200A6] font-semibold">Hire Experts Team</p>
               <p className="text-[19px] leading-[40px] text-white w-full max-w-[912px] text-center mt-[22px]">
                 Hiring experts costs more per hour than hiring entry- or mid-level freelancers, but they can usually get the work done faster—and better.
               </p>
@@ -439,10 +442,10 @@ export default function Home () {
         </div>
       </div>
 
-      <div className="bg-[#1D1933] flex justify-center w-full">
+      <div className="bg-[#1D1933] flex justify-center w-full px-10">
         <div className="max-w-[1440px] w-full m-[0_auto] py-[87px] flex items-center justify-center bg-[#1D19337A]">
-          <div className="flex flex-col items-center justify-center gap-y-8 w-[954px]">
-            <p className="text-[#E200A6] text-[50px] font-semibold ">About US</p>
+          <div className="flex flex-col items-center justify-center gap-y-8 max-w-[954px]">
+            <p className="text-[#E200A6] text-[50px] font-semibold">About US</p>
             <p className="text-white text-[23px] leading-[40px] text-center font-light">The Telefi Plays A Vital Role In Our Ecosystem, Fueling Transactions, Governance, And Incentivizing Participation. Our Transparent And Fair Tokenomics Model Ensures A Balanced And Sustainable Platform.</p>
             <Button>
               <span className="text-[20px] text-white">Details</span>
